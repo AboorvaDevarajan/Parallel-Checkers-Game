@@ -18,7 +18,7 @@ For finding the optimal move of the checker board that can be made by the machin
 ***Step 3:*** Step 2 is repeated until the game tree of depth n gets generated.
 ***Step 4:*** Heuristic value is calculated for all the leaf nodes of the game tree.
 
-![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/raw/master/resources/images/1.png)
+![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/tree/master/images/1.png)
 
 **Heuristic Value:**
 For a checker board
@@ -30,7 +30,7 @@ For a checker board
 
 And the sum of those values present in the checker board is calculated and it is known as the heuristic value of the checker board, more the heuristic value more the favor for the machine to win the game.
 
-![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/raw/master/resources/images/2.png)
+![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/tree/master/images/2.png)
 
 
 For the above checker board 
@@ -44,7 +44,7 @@ Heuristic value						-	0
 
 **Optimization of Mini Max: (Alpha Beta Pruning Algorithm)**
 
-![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/raw/master/resources/images/3.png)
+![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/tree/master/images/3.png)
 
 Thus, by increasing the depth of the tree the best optimal move that can be made by the machine can be identified.
 
@@ -58,5 +58,5 @@ Parallelization is done for two cases:
 For both the cases the tree is parallelized at the depth=2 considering the depth of the root to be 1.
 Hence, all nodes till depth 2 are shared by all processors. The following figure represents the parallelization mechanism.
 
-![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/raw/master/resources/images/4.png)
+![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/tree/master/images/4.png)
 
