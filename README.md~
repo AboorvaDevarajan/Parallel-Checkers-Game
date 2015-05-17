@@ -16,51 +16,52 @@ As previously mentioned, the game will come to an end once a player can no longe
 **N-ary Game Tree:**<br/>
 <br/>
 For finding the optimal move of the checker board that can be made by the machine, N-ary Game tree is generated based on the contemporary state of the checker board by fixing the depth. The N-ary Game tree is generated as follows.			
-***Step 1:*** The initial node that is the root node consists of the contemporary state of the checker board.<br/>
-***Step 2:*** And the forthcoming levels of the tree consist of all possible moves that can be made by the machine and the opponent alternatively.<br/>
-***Step 3:*** Step 2 is repeated until the game tree of depth n gets generated.<br/>
-***Step 4:*** Heuristic value is calculated for all the leaf nodes of the game tree.<br/>
+***Step 1:*** The initial node that is the root node consists of the contemporary state of the checker board.
+***Step 2:*** And the forthcoming levels of the tree consist of all possible moves that can be made by the machine and the opponent alternatively.
+***Step 3:*** Step 2 is repeated until the game tree of depth n gets generated.
+***Step 4:*** Heuristic value is calculated for all the leaf nodes of the game tree.
 
 ![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/1.png)
 
-**Heuristic Value:**<br/><br/>
+**Heuristic Value:**
 For a checker board
-<br/>
- 1. The pawns of the machine are given value **1.** <br/>
- 2. The Kings of the machine are given value **2** (since these are favorable for the machine to win)<br/>
- 3. The pawns of the opponent are given value **-1**(since these are less favorable for the machine to win)<br/>
- 4. The kings of the machine are given value **-2** (since these are unfavorable for the machine to win)<br/>
+
+ 1. The pawns of the machine are given value **1.** 
+ 2. The Kings of the machine are given value **2** (since these are favorable for the machine to win)
+ 3. The pawns of the opponent are given value **-1**(since these are less favorable for the machine to win)
+ 4. The kings of the machine are given value **-2** (since these are unfavorable for the machine to win)
 
 And the sum of those values present in the checker board is calculated and it is known as the heuristic value of the checker board, more the heuristic value more the favor for the machine to win the game.
-<br/>
+
 
 ![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/2.png)
 
 <br/>
-For the above checker board <br/>
-Number of Opponent pawns = 12 *(-1)	-	-12<br/>
-Number of Machine pawns = 12 *1		-	12<br/>
-Number of Opponent kings=0*(-2)		-	0<br/>
-Number of Machine kings=0*2			-	0<br/>
-Heuristic value				     -	0<br/>	
+<br/>
+For the above checker board 
+Number of Opponent pawns = 12 *(-1)	-	-12
+Number of Machine pawns = 12 *1		-	12
+Number of Opponent kings=0*(-2)		-	0
+Number of Machine kings=0*2			-	0
+Heuristic value						-	0	
 
-***Step 5:*** Mini Max algorithm is used to find the best possible move that can be made by the machine<br/>
+***Step 5:*** Mini Max algorithm is used to find the best possible move that can be made by the machine
 
-**Optimization of Mini Max: (Alpha Beta Pruning Algorithm)**<br/>
+**Optimization of Mini Max: (Alpha Beta Pruning Algorithm)**
 
 ![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/3.png)
-<br/>
-Thus, by increasing the depth of the tree the best optimal move that can be made by the machine can be identified.<br/>
 
-**Parallelization of Game Tree using MPI (Message Passing Interface):**<br/>
+Thus, by increasing the depth of the tree the best optimal move that can be made by the machine can be identified.
 
-The winning chances of the machine is increased by increasing the depth of the game tree. In order to increase the time efficiency the algorithm is parallelized using MPI. <br/>
+**Parallelization of Game Tree using MPI (Message Passing Interface):**
+
+The winning chances of the machine is increased by increasing the depth of the game tree. In order to increase the time efficiency the algorithm is parallelized using MPI. 
 MPI that runs on shared memory is used to parallelize since there is a use of pointers to generate game tree.
-Parallelization is done for two cases:<br/>
-1)    Game tree generation<br/>
-2)    Game tree traversal.<br/>
-For both the cases the tree is parallelized at the depth=2 considering the depth of the root to be 1.<br/>
-Hence, all nodes till depth 2 are shared by all processors. The following figure represents the parallelization mechanism.<br/>
+Parallelization is done for two cases:
+1)    Game tree generation
+2)    Game tree traversal.
+For both the cases the tree is parallelized at the depth=2 considering the depth of the root to be 1.
+Hence, all nodes till depth 2 are shared by all processors. The following figure represents the parallelization mechanism.
 
 ![alt tag](https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/4.png)
 
