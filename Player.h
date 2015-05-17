@@ -6,11 +6,11 @@ using namespace std;
 
 class Player {
 public:
-	string name;
-	bool isMax;
-	Player();
-	Player(string myname, bool maxMin);
-	virtual ~Player();
+  string name;
+  bool isMax;
+  Player();
+  Player(string myname, bool maxMin);
+  virtual ~Player();
 };
 
 #endif

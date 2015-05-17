@@ -7,14 +7,14 @@ using namespace std;
 
 class Test {
 public:
-	int mFrom;
-	int mTo;
-	int bFrom;
-	int bTo;
-	int checkerBoard[8][8];
-	int value;
-	Test();
-	virtual ~Test();
+  int mFrom;
+  int mTo;
+  int bFrom;
+  int bTo;
+  int checkerBoard[8][8];
+  int value;
+  Test();
+  virtual ~Test();
 };
 
 #endif
