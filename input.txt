@@ -1,0 +1,12 @@
+case 1
++B+B+B+B
+B+B+B+B+
++B+B+B+B
+O+O+O+O+
++O+O+A+O
+A+A+A+O+
++A+A+A+A
+A+A+A+A+
+
+
+
