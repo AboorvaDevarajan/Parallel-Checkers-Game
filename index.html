@@ -1,33 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <title>Optimal Game of Checkers  by AboorvaDevarajan</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Optimal Game of Checkers </h1>
+        <p class="header">Optimal Game of checkers using alpha beta pruning and Message Passing Interface</p>
 
-    <header>
-      <div class="container">
-        <h1>Optimal Game of Checkers </h1>
-        <h2>Optimal Game of checkers using alpha beta pruning and Message Passing Interface</h2>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game">View On GitHub</a></li>
+        </ul>
 
-        <section id="downloads">
-          <a href="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/AboorvaDevarajan">AboorvaDevarajan</a></p>
 
-    <div class="container">
-      <section id="main_content">
+
+      </header>
+      <section>
         <p><strong>AI Implementation for the game of Checkers</strong></p>
 
 <p><strong>Objective:</strong><br>
@@ -51,11 +53,10 @@ For finding the optimal move of the checker board that can be made by the machin
 <strong><em>Step 3:</em></strong> Step 2 is repeated until the game tree of depth n gets generated.<br>
 <strong><em>Step 4:</em></strong> Heuristic value is calculated for all the leaf nodes of the game tree.<br></p>
 
-<p><img src="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/1.png" alt="alt tag"></p>
+<p><img src="https://raw.githubusercontent.com/AboorvaDevarajan/Parallel-Checkers-Game/master/images/1.png" alt="alt tag"></p>
 
-<p><strong>Heuristic Value:</strong><br><br>
-For a checker board
-<br></p>
+<p><strong>Heuristic Value:</strong><br>
+For a checker board</p>
 
 <ol>
 <li>The pawns of the machine are given value <strong>1.</strong> <br>
@@ -71,21 +72,21 @@ For a checker board
 <p>And the sum of those values present in the checker board is calculated and it is known as the heuristic value of the checker board, more the heuristic value more the favor for the machine to win the game.
 <br></p>
 
-<p><img src="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/2.png" alt="alt tag"></p>
+<p><img src="https://raw.githubusercontent.com/AboorvaDevarajan/Parallel-Checkers-Game/master/images/2.png" alt="alt tag"></p>
 
 <p><br>
 For the above checker board <br>
-Number of Opponent pawns = 12 <em>(-1) -   -12<br>
-Number of Machine pawns = 12 *1     -   12<br>
-Number of Opponent kings=0</em>(-2)     -   0<br>
-Number of Machine kings=0*2         -   0<br>
+Number of Opponent pawns = 12 <em>(-1) -   -12
+Number of Machine pawns = 12 *1     -   12
+Number of Opponent kings=0</em>(-2)     -   0
+Number of Machine kings=0*2         -   0
 Heuristic value                  -  0<br>  </p>
 
 <p><strong><em>Step 5:</em></strong> Mini Max algorithm is used to find the best possible move that can be made by the machine<br></p>
 
 <p><strong>Optimization of Mini Max: (Alpha Beta Pruning Algorithm)</strong><br></p>
 
-<p><img src="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/3.png" alt="alt tag">
+<p><img src="https://raw.githubusercontent.com/AboorvaDevarajan/Parallel-Checkers-Game/master/images/3.png" alt="alt tag">
 <br>
 Thus, by increasing the depth of the tree the best optimal move that can be made by the machine can be identified.<br></p>
 
@@ -99,10 +100,13 @@ Parallelization is done for two cases:<br>
 For both the cases the tree is parallelized at the depth=2 considering the depth of the root to be 1.<br>
 Hence, all nodes till depth 2 are shared by all processors. The following figure represents the parallelization mechanism.<br></p>
 
-<p><img src="https://github.com/AboorvaDevarajan/Parallel-Checkers-Game/blob/master/images/4.png" alt="alt tag"></p>
+<p><img src="https://raw.githubusercontent.com/AboorvaDevarajan/Parallel-Checkers-Game/master/images/4.png" alt="alt tag"></p>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-    
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
